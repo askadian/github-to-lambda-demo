@@ -16,5 +16,5 @@ phases:
   post_build:
     commands:
       - echo "Updating Lambda function..."
-      - aws lambda update-function-code --function-name amresh-github-to-lambda-demo --zip-file fileb://deployment_package.zip
+      - aws lambda update-function-code --function-name amresh-github-to-lambda-demo --zip-file fileb://deployment_package.zip || { echo 'Lambda update failed'; exit 1; }
       - echo "Done!!"
